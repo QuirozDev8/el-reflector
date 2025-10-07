@@ -47,6 +47,33 @@ export class SopaLetras implements OnInit {
     }
   }
 
+  onTouchMove(event: TouchEvent) {
+    if (!this.seleccionando) return;
+    event.preventDefault(); // Prevenir scroll
+
+    const touch = event.touches[0];
+    const gridElement = event.target as HTMLElement;
+    const gridRect = gridElement.getBoundingClientRect();
+
+    // Obtener tamaño de celda dinámicamente
+    const firstCell = gridElement.querySelector('.cell') as HTMLElement;
+    if (!firstCell) return;
+    const cellSize = firstCell.offsetWidth;
+    const padding = parseInt(getComputedStyle(gridElement).paddingLeft) || 15;
+    const margin = 1; // Margin de celda
+
+    const relativeX = touch.clientX - gridRect.left - padding;
+    const relativeY = touch.clientY - gridRect.top - padding;
+
+    const colIndex = Math.floor(relativeX / (cellSize + 2 * margin));
+    const rowIndex = Math.floor(relativeY / (cellSize + 2 * margin));
+
+    if (rowIndex >= 0 && rowIndex < this.tablero.length &&
+        colIndex >= 0 && colIndex < this.tablero[0].length) {
+      this.continueSelection(rowIndex, colIndex);
+    }
+  }
+
   endSelection() {
     this.seleccionando = false;
 

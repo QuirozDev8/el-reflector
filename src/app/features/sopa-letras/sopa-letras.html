@@ -6,7 +6,7 @@
 
   <div class="game-layout">
     <div class="grid-container m-auto">
-      <div class="grid" (mouseup)="endSelection()" (mouseleave)="endSelection()">
+      <div class="grid" (mouseup)="endSelection()" (mouseleave)="endSelection()" (touchmove)="onTouchMove($event)" (touchend)="endSelection()">
         <div *ngFor="let row of tablero; let i = index" class="grid-row">
           <div
             *ngFor="let cell of row; let j = index"
@@ -17,6 +17,7 @@
             }"
             (mousedown)="startSelection(i, j)"
             (mouseover)="continueSelection(i, j)"
+            (touchstart)="startSelection(i, j)"
           >
             {{ cell.letra }}
           </div>
