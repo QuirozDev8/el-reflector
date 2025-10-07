@@ -1,50 +1,213 @@
-/* From Uiverse.io by Nawsome */ 
-.loader {
+.sopa-container {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  min-height: 100vh;
+  font-family: 'Georgia', serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #391011;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.game-layout {
   display: flex;
-  align-items: center;
+  gap: 40px;
+  align-items: flex-start;
   justify-content: center;
-  flex-direction: row;
+  margin: 10px;
 }
 
-.slider {
-  overflow: hidden;
-  background-color: white;
-  margin: 0 15px;
-  height: 80px;
-  width: 20px;
-  border-radius: 30px;
-  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 30px #fff,
-    inset -5px -5px 10px rgba(0, 0, 255, 0.1),
-    inset 5px 5px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
+.grid-container {
+  flex: 1;
+  max-width: 600px;
 }
 
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  border-radius: 100%;
-  box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.3), 0px 420px 0 400px #2697f3,
-    inset 0px 0px 0px rgba(0, 0, 0, 0.1);
-  animation: animate_2 2.5s ease-in-out infinite;
-  animation-delay: calc(-0.5s * var(--i));
+.grid {
+  display: inline-block;
+  background: #2D4747;
+  border: 3px solid #391011;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  user-select: none;
 }
 
-@keyframes animate_2 {
-  0% {
-    transform: translateY(250px);
-    filter: hue-rotate(0deg);
+.grid-row {
+  display: flex;
+}
+
+.cell {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #391011;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  margin: 1px;
+}
+
+.cell:hover {
+  background: rgba(57, 16, 17, 0.1);
+  transform: scale(1.1);
+}
+
+.cell.seleccionada {
+  background-color: #391011;
+  color: white;
+  box-shadow: 0 0 10px rgba(57, 16, 17, 0.5);
+}
+
+.cell.encontrada {
+  background-color: #2D4747;
+  color: white;
+  box-shadow: 0 0 10px rgba(45, 71, 71, 0.5);
+}
+
+.words-container {
+  flex: 0 0 400px;
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #391011;
+}
+
+.words h3 {
+  font-size: 1.5rem;
+  color: #391011;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.words ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.words li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  border-left: 4px solid #2D4747;
+  transition: all 0.3s ease;
+}
+
+.words li.tachada {
+  text-decoration: line-through;
+  color: #999;
+  background: #e9ecef;
+  border-left-color: #6c757d;
+  opacity: 0.7;
+}
+
+.reset-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #391011;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+}
+
+.reset-button:hover {
+  background-color: #2D4747;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.success-message {
+  background: linear-gradient(135deg, #2D4747 0%, #391011 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  animation: successFadeIn 0.5s ease-out;
+  letter-spacing: 0.5px;
+}
+
+@keyframes successFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-
-  50% {
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
+}
 
-  100% {
-    transform: translateY(250px);
-    filter: hue-rotate(180deg);
+/* Responsivo */
+@media (max-width: 768px) {
+  .game-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .grid-container {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .grid {
+    margin: 0 auto;
+  }
+
+  .words-container {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .cell {
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+  }
+
+  .sopa-container {
+    padding: 20px 10px;
+  }
+
+  .grid {
+    padding: 10px;
+  }
+
+  .words ul {
+    column-count: 1;
+  }
+
+  .success-message {
+    font-size: 1.2rem;
+    padding: 15px;
   }
 }

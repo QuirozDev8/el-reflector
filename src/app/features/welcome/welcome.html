@@ -1,15 +1,21 @@
-<!-- From Uiverse.io by Prakhar227 --> 
-<div class="form-container">
-  <div class="form">
-    <span class="heading">Campus Ambassador Program</span>
-    <span class="c1">Become a Campus Ambassador</span>
-
-    <input class="input" type="text" placeholder="Phone Number" />
-    <span class="c2">Join our ambassador program and get exclusive perks!</span>
-    <div class="button-container">
-      <div class="send-button">Become an Ambassador</div>
-      <div class="reset-button-container">
-        <div class="reset-button" id="reset-btn">Logout</div>
+<div class="welcome-container">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6 col-lg-6 text-section">
+        <h1 class="welcome-title">Bienvenido a El Reflector</h1>
+        <p class="welcome-description">
+          Entrena tu mente y diviértete en nuestro espacio de juego y entrenamiento. 
+          ¡Disfruta de la experiencia de leer en papel y resuelve nuestros acertijos y desafíos!
+        </p>
+        <h3 class="challenge-title">
+          Participa en el Desafío del Conocimiento, responde las
+          preguntas, escala posiciones en nuestro ranking. ¡Demuestra que tu experiencia marca la
+          diferencia!
+        </h3>
+        <button class="cta-button" (click)="scrollToQaRanking()" aria-label="Iniciar desafío del conocimiento">Iniciar ahora!</button>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6 image-section">
+        <img src="/img/muñeca.png" class="floating-image img-fluid" alt="Ilustración de bienvenida" />
       </div>
     </div>
   </div>

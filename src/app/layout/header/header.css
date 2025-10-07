@@ -1,0 +1,120 @@
+
+ 
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: column !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  .spacer {
+    display: none !important;
+  }
+
+  .nav-item.dropdown {
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+  }
+}
+
+ 
+/* Botón toggler estándar de Bootstrap */
+
+.nav-link {
+  position: relative !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  border-radius: 25px !important;
+  padding: 8px 20px !important;
+  margin: 0 5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  overflow: hidden !important;
+  border: 2px solid transparent !important;
+}
+
+.nav-link::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+  transition: left 0.6s ease !important;
+}
+
+.nav-link::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 70%) !important;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 50% !important;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px) scale(1.05) !important;
+  background: linear-gradient(135deg, #2D4747 0%, #391011 100%) !important;
+  color: white !important;
+  box-shadow: 0 8px 20px rgba(45, 71, 71, 0.3),
+              0 4px 8px rgba(57, 16, 17, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  opacity: 0.95 !important;
+}
+
+.nav-link:hover::before {
+  left: 100% !important;
+}
+
+.nav-link:hover::after {
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.nav-link:active {
+  transform: translateY(-1px) scale(1.02) !important;
+  opacity: 0.9 !important;
+}
+
+/* Efectos sutiles para el botón del dropdown */
+.dropdown-toggle {
+  background: none !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.dropdown-toggle:hover {
+  background-color: rgba(45, 71, 71, 0.1) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(45, 71, 71, 0.15) !important;
+}
+
+.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(45, 71, 71, 0.25) !important;
+}
+
+/* Animación pulsante para efectos avanzados en botones */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(45, 71, 71, 0.3),
+                0 4px 8px rgba(57, 16, 17, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 10px 25px rgba(45, 71, 71, 0.35),
+                0 5px 10px rgba(57, 16, 17, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+  }
+}

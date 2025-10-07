@@ -1,131 +1,98 @@
-/* From Uiverse.io by Prakhar227 */ 
-.orange {
-  color: #caf438;
-}
-
-.form-container {
-  max-width: 700px;
-  margin: 30px;
-  background-color: #001925;
-  padding: 30px;
-  border-left: 5px solid #caf438;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 20px),
-    calc(100% - 20px) 100%,
-    0 100%
-  );
-}
-
-.heading {
-  display: block;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-.c1 {
-  display: block;
-  color: #d3f35f;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.c2 {
-  display: block;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.form-container .form .input {
-  color: #87a4b6;
-  width: 100%;
-  background-color: #002733;
-  border: none;
-  outline: none;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  transition: all 0.2s ease-in-out;
-  border-left: 1px solid transparent;
-}
-
-.form-container .form .input:focus {
-  border-left: 5px solid #caf438;
-}
-
-.form-container .form .textarea {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  outline: none;
-  background-color: #013747;
-  color: #caf438;
-  font-weight: bold;
-  resize: none;
-  max-height: 150px;
-  margin-bottom: 20px;
-  border-left: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
-}
-
-.form-container .form .textarea:focus {
-  border-left: 5px solid #caf438;
-}
-
-.form-container .form .button-container {
+.welcome-container {
+  background-color: #eeeeee;
+  color: #2D4747;
+  padding: 40px 0;
+  min-height: 100vh;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  font-family: 'Georgia', serif;
 }
 
-.form-container .form .button-container .send-button {
-  flex-basis: 70%;
-  background: #caf438;
-  padding: 10px;
-  color: #001925;
-  text-align: center;
+.text-section {
+  padding: 30px;
+}
+
+.welcome-title {
+  font-size: 3.5rem;
   font-weight: bold;
-  border: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
+  color: #391011;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  line-height: 1.2;
 }
 
-.form-container .form .button-container .send-button:hover {
-  background: transparent;
-  border: 1px solid #ff7a01;
-  color: #caf438;
+.welcome-description {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+  letter-spacing: 0.5px;
 }
 
-.form-container .form .button-container .reset-button-container {
-  filter: drop-shadow(1px 1px 0px #ff7a01);
-  flex-basis: 30%;
+.challenge-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #391011;
+  margin-bottom: 35px;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
-.form-container .form .button-container .reset-button-container .reset-button {
-  position: relative;
-  text-align: center;
-  padding: 10px;
-  color: #caf438;
+.cta-button {
+  background-color: #391011;
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  font-size: 1.3rem;
   font-weight: bold;
-  background: #001925;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
-    0 100%
-  );
-  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
 }
 
-.form-container
-  .form
-  .button-container
-  .reset-button-container
-  .reset-button:hover {
-  background: #caf438;
-  color: #001925;
+.cta-button:hover, .cta-button:focus {
+  background-color: #2D4747;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+.image-section {
+  text-align: center;
+  padding: 30px;
+}
+
+.floating-image {
+  max-width: 100%;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+  .welcome-description {
+    font-size: 1.1rem;
+  }
+  .challenge-title {
+    font-size: 1.6rem;
+  }
+  .cta-button {
+    padding: 15px 28px;
+    font-size: 1.1rem;
+  }
 }

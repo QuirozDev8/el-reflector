@@ -1,0 +1,46 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <div class="container-fluid">
+   <!-- Logo/Brand -->
+   <a class="navbar-brand" href="#">
+     <img src="/img/logo-img.png" class="img-fluid ps-4" alt="Logo" style="height: 60px; width: 160px;">
+   </a>
+
+   <!-- Spacer para centrar elementos en desktop -->
+   <div class="flex-grow-1 d-none d-lg-block"></div>
+
+   <!-- Botón toggler para móviles -->
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <!-- Menú colapsable -->
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <div class="navbar-nav ms-auto">
+       <!-- Botones de navegación -->
+       <a class="nav-link" href="#" role="button">Iniciar sesión</a>
+       <a class="nav-link" href="#" role="button">Crear cuenta</a>
+
+       <!-- Menú desplegable de perfil -->
+       <div class="nav-item dropdown">
+         <button class="btn dropdown-toggle"
+                 type="button"
+                 id="profileDropdown"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false">
+           <i class="fa-solid fa-circle-user" style="font-size: 1.7em;"></i>
+         </button>
+
+         <ul class="dropdown-menu dropdown-menu-end"
+             aria-labelledby="profileDropdown">
+           <li><a class="dropdown-item" href="#">Perfil</a></li>
+           <li><a class="dropdown-item" href="#">Configuraciones</a></li>
+           <li><hr class="dropdown-divider"></li>
+           <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+         </ul>
+       </div>
+     </div>
+   </div>
+ </div>
+</nav>

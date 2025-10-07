@@ -1,17 +1,39 @@
-<!-- From Uiverse.io by Nawsome --> 
+<div class="sopa-container">
+  <h1 class="title">🧩 Sopa de Letras</h1>
+  <div *ngIf="showSuccessMessage" class="success-message">
+    🎉 ¡Felicitaciones! Has encontrado todas las palabras de la sopa de letras. 🎉
+  </div>
 
-  <section class="loader">
+  <div class="game-layout">
+    <div class="grid-container">
+      <div class="grid" (mouseup)="endSelection()" (mouseleave)="endSelection()">
+        <div *ngFor="let row of tablero; let i = index" class="grid-row">
+          <div
+            *ngFor="let cell of row; let j = index"
+            class="cell"
+            [ngClass]="{
+              encontrada: cell.encontrada,
+              seleccionada: cell.seleccionada
+            }"
+            (mousedown)="startSelection(i, j)"
+            (mouseover)="continueSelection(i, j)"
+          >
+            {{ cell.letra }}
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="slider" style="--i:0">
+    <div class="words-container">
+      <div class="words">
+        <h3>Palabras a buscar:</h3>
+        <ul>
+          <li *ngFor="let palabra of palabras" [class.tachada]="encontradas.includes(palabra)">
+            {{ palabra }}
+          </li>
+        </ul>
+        <button class="reset-button" (click)="reiniciarJuego()">Reiniciar Juego</button>
+      </div>
     </div>
-    <div class="slider" style="--i:1">
-    </div>
-    <div class="slider" style="--i:2">
-    </div>
-    <div class="slider" style="--i:3">
-    </div>
-    <div class="slider" style="--i:4">
-    </div>
-  </section>
-
-
+  </div>
+</div>
