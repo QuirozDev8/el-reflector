@@ -10,7 +10,7 @@ import { Auth } from './features/auth/auth';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Navbar, Welcome, QaRanking, SopaLetras, Auth],
+  imports: [ Header, Navbar, Welcome, QaRanking, SopaLetras, Auth],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
