@@ -5,12 +5,11 @@ import { Navbar } from './layout/navbar/navbar';
 import { Welcome } from './features/welcome/welcome';
 import { QaRanking } from './features/qa-ranking/qa-ranking';
 import { SopaLetras } from './features/sopa-letras/sopa-letras';
-import { Auth } from './features/auth/auth';
-
+import { EncuentraDiferencias } from './features/encuentra-diferencias/encuentra-diferencias';
 
 @Component({
   selector: 'app-root',
-  imports: [ Header, Navbar, Welcome, QaRanking, SopaLetras, Auth],
+  imports: [ Header, Navbar, Welcome, QaRanking, SopaLetras, EncuentraDiferencias],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

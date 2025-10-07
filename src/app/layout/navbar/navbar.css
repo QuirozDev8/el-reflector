@@ -16,7 +16,7 @@
 .button-container {
   display: flex;
   background: linear-gradient(135deg, #2D4747 0%, #391011 100%);
-  width: 400px;
+  width: 310px;
   height: 65px;
   align-items: center;
   justify-content: space-around;
@@ -45,7 +45,7 @@
 }
 
 .button-container:hover {
-  width: 420px;
+  width: 330px;
   background: linear-gradient(135deg, #391011 0%, #2D4747 100%);
   box-shadow: 0 12px 35px rgba(45, 71, 71, 0.4),
               0 6px 15px rgba(57, 16, 17, 0.3);

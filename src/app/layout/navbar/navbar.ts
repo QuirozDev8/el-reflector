@@ -14,7 +14,7 @@ export class Navbar {
 
   @HostListener('window:scroll')
   onScroll() {
-    const sections = ['welcome-section', 'qa-ranking-section', 'sopa-letras-section', 'qa-ranking'];
+    const sections = ['welcome-section', 'sopa-letras-section', 'qa-ranking-section', 'encuentra-diferencias-section'];
     const scrollPosition = window.scrollY + 150; // Offset para header
 
     for (const sectionId of sections) {
