@@ -75,7 +75,7 @@
 }
 
 .words-container {
-  flex: 0 0 400px;
+  flex: 0 0 500px;
   background: white;
   border-radius: 10px;
   padding: 25px;
@@ -173,6 +173,7 @@
   .grid-container {
     max-width: 100%;
     text-align: center;
+
   }
 
   .grid {
@@ -210,4 +211,34 @@
     font-size: 1.2rem;
     padding: 15px;
   }
-}
+  }
+  
+  /* Para móviles muy pequeños */
+  @media (max-width: 480px) {
+    .cell {
+      width: 18px;
+      height: 18px;
+      font-size: 0.8rem;
+    }
+  
+    .grid-container {
+      text-align: center;
+    }
+  
+    .grid {
+      padding: 8px;
+      margin: 0 auto;
+    }
+  
+    .words-container {
+      margin: 0 auto;
+    }
+  
+    .sopa-container {
+      padding: 15px 5px;
+    }
+  
+    .game-layout {
+      margin: 5px;
+    }
+  }
