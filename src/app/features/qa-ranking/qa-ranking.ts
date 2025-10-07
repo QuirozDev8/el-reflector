@@ -111,6 +111,10 @@ export class QaRanking implements OnInit {
       }
       this.saveScore(this.quizForm.value.userName, this.score);
       this.showSuccess = true;
+      // Reset automático después de 3 segundos
+      setTimeout(() => {
+        this.resetQuiz();
+      }, 3000);
     }
   }
 
@@ -136,15 +140,37 @@ export class QaRanking implements OnInit {
   }
 
   private saveScore(name: string, score: number) {
-    const scores: Score[] = JSON.parse(localStorage.getItem('qaRanking') || '[]');
+    const defaultScores: Score[] = [
+      { name: 'Ana López', score: 12 },
+      { name: 'Carlos García', score: 11 },
+      { name: 'María Rodríguez', score: 10 },
+      { name: 'Juan Pérez', score: 9 },
+      { name: 'Laura Martínez', score: 8 }
+    ];
+    let scores: Score[] = JSON.parse(localStorage.getItem('qaRanking') || '[]');
+    // Filtrar scores para no duplicar default si ya están
+    scores = scores.filter(s => !defaultScores.some(d => d.name === s.name));
     scores.push({ name, score });
-    scores.sort((a, b) => b.score - a.score);
-    this.ranking = scores.slice(0, 10);
-    localStorage.setItem('qaRanking', JSON.stringify(scores));
+    const allScores = [...defaultScores, ...scores];
+    allScores.sort((a, b) => b.score - a.score);
+    this.ranking = allScores.slice(0, 10);
+    // Guardar solo los scores no default
+    const userScores = scores.filter(s => !defaultScores.some(d => d.name === s.name));
+    localStorage.setItem('qaRanking', JSON.stringify(userScores));
   }
 
   private loadRanking() {
+    const defaultScores: Score[] = [
+      { name: 'Ana López', score: 12 },
+      { name: 'Carlos García', score: 11 },
+      { name: 'María Rodríguez', score: 10 },
+      { name: 'Juan Pérez', score: 9 },
+      { name: 'Laura Martínez', score: 8 }
+    ];
     const scores: Score[] = JSON.parse(localStorage.getItem('qaRanking') || '[]');
-    this.ranking = scores.slice(0, 10);
+    const allScores = [...defaultScores, ...scores];
+    allScores.sort((a, b) => b.score - a.score);
+    this.ranking = allScores.slice(0, 10);
   }
+
 }

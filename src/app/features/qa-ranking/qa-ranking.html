@@ -2,7 +2,7 @@
   <h1 class="title"> Quiz de Cultura General 🧠</h1>
 
   <div *ngIf="showSuccess" class="success-message">
-    🎉 ¡Quiz completado! Tu puntuación es: {{ score }}/12 🎉
+    🎉 ¡Felicitaciones! Tu puntuación es {{ score }}/12. El quiz se reiniciará automáticamente para el siguiente participante. 🎉
   </div>
 
   <form [formGroup]="quizForm" (ngSubmit)="onSubmit()" class="quiz-form">
@@ -50,7 +50,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let score of ranking; let i = index">
-          <td>{{ i + 1 }}</td>
+          <td>
+            <span *ngIf="i === 0">🥇</span>
+            <span *ngIf="i === 1">🥈</span>
+            <span *ngIf="i === 2">🥉</span>
+            <span *ngIf="i > 2">{{ i + 1 }}</span>
+          </td>
           <td>{{ score.name }}</td>
           <td>{{ score.score }}/12</td>
         </tr>
