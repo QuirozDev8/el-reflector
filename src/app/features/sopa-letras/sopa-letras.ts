@@ -16,7 +16,7 @@ interface Celda {
 })
 
 
-
+ 
 
 export class SopaLetras implements OnInit {
   palabras = ['BRILLAR', 'LORENZANAS', 'VOZ', 'COLOR', 'LUZ', 'HISTORIA', 'VALORAR', 'MUSICA', 'DIALOGO', 'REFLEJAR'];
@@ -52,7 +52,7 @@ export class SopaLetras implements OnInit {
     event.preventDefault(); // Prevenir scroll
 
     const touch = event.touches[0];
-    const gridElement = event.target as HTMLElement;
+    const gridElement = event.currentTarget as HTMLElement;
     const gridRect = gridElement.getBoundingClientRect();
 
     // Obtener tamaño de celda dinámicamente
