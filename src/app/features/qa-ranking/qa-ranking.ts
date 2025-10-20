@@ -25,8 +25,8 @@ export class QaRanking implements OnInit {
   questions: Question[] = [
     {
       question: '¿En qué año se construyó la sede central?',
-      options: ['1978', '1977', '1976', '1972'],
-      correct: 1
+      options: ['1978', '1977', '1967', '1972'],
+      correct: 2
     },
     {
       question: '¿Quién fue la fundadora de la I.E?',
