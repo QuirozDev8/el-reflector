@@ -66,8 +66,7 @@
 .floating-image {
   height: auto;
   animation: float 4s ease-in-out infinite;
-  width: 500px;
-  max-width: 100%; /* Asegura que la imagen sea responsive */
+  max-width: 100%;  
 }
 
 @keyframes float {
@@ -83,7 +82,6 @@
   font-family: 'Comic Sans MS', 'Brush Script MT', cursive; /* Una fuente más divertida y llamativa */
   font-size: 2.8rem; /* Tamaño grande para contrastar con la imagen */
   color: #391011; /* Color principal de la marca */
-  margin-top: 25px; /* Espacio para separarlo de la imagen */
   font-weight: 600;
   text-shadow: 1px 1px 3px rgba(45, 71, 71, 0.2); /* Sombra sutil para darle profundidad */
   letter-spacing: 1px;

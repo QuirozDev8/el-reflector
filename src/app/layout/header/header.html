@@ -23,27 +23,25 @@
        <a class="nav-link" href="#" role="button">Crear cuenta</a>
 
         @if(false){
+        <!-- Menú desplegable de perfil -->
+        <div class="nav-item dropdown">
+          <button class="btn dropdown-toggle"
+                  type="button"
+                  id="profileDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+            <i class="fa-solid fa-circle-user" style="font-size: 1.7em;"></i>
+          </button>
 
-        
-       <!-- Menú desplegable de perfil -->
-       <div class="nav-item dropdown">
-         <button class="btn dropdown-toggle"
-                 type="button"
-                 id="profileDropdown"
-                 data-bs-toggle="dropdown"
-                 aria-expanded="false">
-           <i class="fa-solid fa-circle-user" style="font-size: 1.7em;"></i>
-         </button>
-
-         <ul class="dropdown-menu dropdown-menu-end"
-             aria-labelledby="profileDropdown">
-           <li><a class="dropdown-item" href="#">Perfil</a></li>
-           <li><a class="dropdown-item" href="#">Configuraciones</a></li>
-           <li><hr class="dropdown-divider"></li>
-           <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-         </ul>
-        </div>
-      }
+          <ul class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="#">Configuraciones</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+          </ul>
+          </div>
+        }
      </div> 
    </div>
  </div>
